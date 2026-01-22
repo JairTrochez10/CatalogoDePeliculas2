@@ -9,14 +9,14 @@ public class Servicio implements IServicioPeliculas{
     ArrayList<Pelicula> peliculas=new ArrayList();
     @Override
     public void listarPeliculas() {
-        System.out.println("Listando pelicula...");
+        System.out.println("Listando peliculas...");
         peliculas.forEach(System.out::println);
     }
 
     @Override
     public void agregarPeliculas(Pelicula pelicula) {
         peliculas.add(pelicula);
-        System.out.println("Agregando pelicula...");
+        System.out.println(pelicula+" agregada con exito...");
     }
 
     @Override
@@ -29,8 +29,11 @@ public class Servicio implements IServicioPeliculas{
     }
     public static void main(String[] args) {
         //objetos
-        var pelicula1 = new Pelicula("Pedro y Pablo");
-        var pelicula2 = new Pelicula("Snnopy");
+        var pelicula1 = new Pelicula("Thor");
+        var pelicula2 = new Pelicula("Loki");
+        var pelicula3 = new Pelicula("Iron Man I");
+        var pelicula4 = new Pelicula("Fats and Furius");
+        var pelicula5 = new Pelicula("Hulk");
 
         //creamos servicio
         IServicioPeliculas sp = new Servicio();
@@ -38,6 +41,9 @@ public class Servicio implements IServicioPeliculas{
         //instancias de metodos
         sp.agregarPeliculas(pelicula1);
         sp.agregarPeliculas(pelicula2);
+        sp.agregarPeliculas(pelicula3);
+        sp.agregarPeliculas(pelicula4);
+        sp.agregarPeliculas(pelicula5);
 
         //listamos peliculas
         sp.listarPeliculas();
