@@ -29,10 +29,13 @@ public class Pelicula {
         return Objects.hashCode(nombre);
     }
     @Override
+//    public String toString() {
+//        return "Pelicula{" +
+//                "nombre='" + nombre + '\'' +
+//                '}';
+//    }
     public String toString() {
-        return "Pelicula{" +
-                "nombre='" + nombre + '\'' +
-                '}';
+        return nombre;
     }
 
 

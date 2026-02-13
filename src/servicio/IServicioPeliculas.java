@@ -6,4 +6,5 @@ public interface IServicioPeliculas {
     public void listarPeliculas();
     public void agregarPeliculas(Pelicula nombre);
     public void buscarPeliculas(Pelicula nombre);
+    public void eliminarPeliculas(Pelicula nombre);
 }

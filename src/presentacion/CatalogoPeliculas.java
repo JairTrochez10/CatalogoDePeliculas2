@@ -3,6 +3,7 @@ package presentacion;
 import dominio.Pelicula;
 import servicio.IServicioPeliculas;
 import servicio.Servicio;
+import servicio.ServicioPeliculasArchivo;
 
 import java.util.Scanner;
 
@@ -13,7 +14,8 @@ public class CatalogoPeliculas {
         var consola= new Scanner(System.in);
 
         //agregamos la implemantacion de los servicios
-        IServicioPeliculas servicioPeliculas= new Servicio();
+//        IServicioPeliculas servicioPeliculas= new Servicio();
+        IServicioPeliculas servicioPeliculas=new ServicioPeliculasArchivo();
 
         //menu
         do{
@@ -34,7 +36,8 @@ public class CatalogoPeliculas {
             1. Agregar peliculas
             2. Listar peliculas
             3. Buscar peliculas
-            4. Salir
+            4. Eleminar peliculas
+            5. Salir
             """);
     }//mostrar menu
 
@@ -60,6 +63,11 @@ public class CatalogoPeliculas {
                 servicioPeliculas.buscarPeliculas(new Pelicula(buscar));
             }
             case 4->{
+                System.out.println("Ingrese el nombre del pelicula a ELeminar: ");
+                var nombrePeli= consola.nextLine();
+                servicioPeliculas.eliminarPeliculas(new Pelicula(nombrePeli));
+            }
+            case 5->{
                 System.out.println("Saliendo del programa...");
                 salir=true;
             }
